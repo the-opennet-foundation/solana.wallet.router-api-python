@@ -1,6 +1,6 @@
 [project]
 name = "solana.wallet.router_api"
-version = "0.0.1"
+version = "0.1.0"
 description = "The official Python library for the solana.wallet.router-api API"
 dynamic = ["readme"]
 license = "MIT"
