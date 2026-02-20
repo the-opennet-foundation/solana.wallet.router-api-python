@@ -23,7 +23,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestV1:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_pools(self, client: SolanaWalletRouterAPI) -> None:
         v1 = client.jupiter_datapi.v1.get_pools(
@@ -31,7 +31,7 @@ class TestV1:
         )
         assert_matches_type(GetTokenResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_pools(self, client: SolanaWalletRouterAPI) -> None:
         response = client.jupiter_datapi.v1.with_raw_response.get_pools(
@@ -43,7 +43,7 @@ class TestV1:
         v1 = response.parse()
         assert_matches_type(GetTokenResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_pools(self, client: SolanaWalletRouterAPI) -> None:
         with client.jupiter_datapi.v1.with_streaming_response.get_pools(
@@ -57,7 +57,7 @@ class TestV1:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_token_holders(self, client: SolanaWalletRouterAPI) -> None:
         v1 = client.jupiter_datapi.v1.get_token_holders(
@@ -65,7 +65,7 @@ class TestV1:
         )
         assert_matches_type(V1GetTokenHoldersResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_token_holders(self, client: SolanaWalletRouterAPI) -> None:
         response = client.jupiter_datapi.v1.with_raw_response.get_token_holders(
@@ -77,7 +77,7 @@ class TestV1:
         v1 = response.parse()
         assert_matches_type(V1GetTokenHoldersResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_token_holders(self, client: SolanaWalletRouterAPI) -> None:
         with client.jupiter_datapi.v1.with_streaming_response.get_token_holders(
@@ -91,7 +91,7 @@ class TestV1:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_token_holders(self, client: SolanaWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -99,7 +99,7 @@ class TestV1:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_token_transactions(self, client: SolanaWalletRouterAPI) -> None:
         v1 = client.jupiter_datapi.v1.get_token_transactions(
@@ -107,7 +107,7 @@ class TestV1:
         )
         assert_matches_type(V1GetTokenTransactionsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_token_transactions_with_all_params(self, client: SolanaWalletRouterAPI) -> None:
         v1 = client.jupiter_datapi.v1.get_token_transactions(
@@ -121,7 +121,7 @@ class TestV1:
         )
         assert_matches_type(V1GetTokenTransactionsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_token_transactions(self, client: SolanaWalletRouterAPI) -> None:
         response = client.jupiter_datapi.v1.with_raw_response.get_token_transactions(
@@ -133,7 +133,7 @@ class TestV1:
         v1 = response.parse()
         assert_matches_type(V1GetTokenTransactionsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_token_transactions(self, client: SolanaWalletRouterAPI) -> None:
         with client.jupiter_datapi.v1.with_streaming_response.get_token_transactions(
@@ -147,7 +147,7 @@ class TestV1:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_token_transactions(self, client: SolanaWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -155,7 +155,7 @@ class TestV1:
                 asset_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_wallet_pnl_stats(self, client: SolanaWalletRouterAPI) -> None:
         v1 = client.jupiter_datapi.v1.get_wallet_pnl_stats(
@@ -163,7 +163,7 @@ class TestV1:
         )
         assert_matches_type(V1GetWalletPnlStatsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_wallet_pnl_stats(self, client: SolanaWalletRouterAPI) -> None:
         response = client.jupiter_datapi.v1.with_raw_response.get_wallet_pnl_stats(
@@ -175,7 +175,7 @@ class TestV1:
         v1 = response.parse()
         assert_matches_type(V1GetWalletPnlStatsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_wallet_pnl_stats(self, client: SolanaWalletRouterAPI) -> None:
         with client.jupiter_datapi.v1.with_streaming_response.get_wallet_pnl_stats(
@@ -195,7 +195,7 @@ class TestAsyncV1:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_pools(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         v1 = await async_client.jupiter_datapi.v1.get_pools(
@@ -203,7 +203,7 @@ class TestAsyncV1:
         )
         assert_matches_type(GetTokenResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_pools(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.jupiter_datapi.v1.with_raw_response.get_pools(
@@ -215,7 +215,7 @@ class TestAsyncV1:
         v1 = await response.parse()
         assert_matches_type(GetTokenResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_pools(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.jupiter_datapi.v1.with_streaming_response.get_pools(
@@ -229,7 +229,7 @@ class TestAsyncV1:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_token_holders(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         v1 = await async_client.jupiter_datapi.v1.get_token_holders(
@@ -237,7 +237,7 @@ class TestAsyncV1:
         )
         assert_matches_type(V1GetTokenHoldersResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_token_holders(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.jupiter_datapi.v1.with_raw_response.get_token_holders(
@@ -249,7 +249,7 @@ class TestAsyncV1:
         v1 = await response.parse()
         assert_matches_type(V1GetTokenHoldersResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_token_holders(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.jupiter_datapi.v1.with_streaming_response.get_token_holders(
@@ -263,7 +263,7 @@ class TestAsyncV1:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_token_holders(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -271,7 +271,7 @@ class TestAsyncV1:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_token_transactions(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         v1 = await async_client.jupiter_datapi.v1.get_token_transactions(
@@ -279,7 +279,7 @@ class TestAsyncV1:
         )
         assert_matches_type(V1GetTokenTransactionsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_token_transactions_with_all_params(
         self, async_client: AsyncSolanaWalletRouterAPI
@@ -295,7 +295,7 @@ class TestAsyncV1:
         )
         assert_matches_type(V1GetTokenTransactionsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_token_transactions(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.jupiter_datapi.v1.with_raw_response.get_token_transactions(
@@ -307,7 +307,7 @@ class TestAsyncV1:
         v1 = await response.parse()
         assert_matches_type(V1GetTokenTransactionsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_token_transactions(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.jupiter_datapi.v1.with_streaming_response.get_token_transactions(
@@ -321,7 +321,7 @@ class TestAsyncV1:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_token_transactions(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `asset_id` but received ''"):
@@ -329,7 +329,7 @@ class TestAsyncV1:
                 asset_id="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_wallet_pnl_stats(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         v1 = await async_client.jupiter_datapi.v1.get_wallet_pnl_stats(
@@ -337,7 +337,7 @@ class TestAsyncV1:
         )
         assert_matches_type(V1GetWalletPnlStatsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_wallet_pnl_stats(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.jupiter_datapi.v1.with_raw_response.get_wallet_pnl_stats(
@@ -349,7 +349,7 @@ class TestAsyncV1:
         v1 = await response.parse()
         assert_matches_type(V1GetWalletPnlStatsResponse, v1, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_wallet_pnl_stats(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.jupiter_datapi.v1.with_streaming_response.get_wallet_pnl_stats(

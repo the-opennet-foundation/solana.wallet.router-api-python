@@ -27,7 +27,7 @@ class SwapResource(SyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/solana.wallet.router-api-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/the-opennet-foundation/solana.wallet.router-api-python#accessing-raw-response-data-eg-headers
         """
         return SwapResourceWithRawResponse(self)
 
@@ -36,7 +36,7 @@ class SwapResource(SyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/solana.wallet.router-api-python#with_streaming_response
+        For more information, see https://www.github.com/the-opennet-foundation/solana.wallet.router-api-python#with_streaming_response
         """
         return SwapResourceWithStreamingResponse(self)
 
@@ -52,7 +52,7 @@ class AsyncSwapResource(AsyncAPIResource):
         This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
-        For more information, see https://www.github.com/stainless-sdks/solana.wallet.router-api-python#accessing-raw-response-data-eg-headers
+        For more information, see https://www.github.com/the-opennet-foundation/solana.wallet.router-api-python#accessing-raw-response-data-eg-headers
         """
         return AsyncSwapResourceWithRawResponse(self)
 
@@ -61,7 +61,7 @@ class AsyncSwapResource(AsyncAPIResource):
         """
         An alternative to `.with_raw_response` that doesn't eagerly read the response body.
 
-        For more information, see https://www.github.com/stainless-sdks/solana.wallet.router-api-python#with_streaming_response
+        For more information, see https://www.github.com/the-opennet-foundation/solana.wallet.router-api-python#with_streaming_response
         """
         return AsyncSwapResourceWithStreamingResponse(self)
 
