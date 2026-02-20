@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestAPI:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_get_wallet_info(self, client: SolanaWalletRouterAPI) -> None:
         api = client.api.get_wallet_info(
@@ -29,7 +29,7 @@ class TestAPI:
         )
         assert_matches_type(APIGetWalletInfoResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_get_wallet_info(self, client: SolanaWalletRouterAPI) -> None:
         response = client.api.with_raw_response.get_wallet_info(
@@ -41,7 +41,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIGetWalletInfoResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_get_wallet_info(self, client: SolanaWalletRouterAPI) -> None:
         with client.api.with_streaming_response.get_wallet_info(
@@ -55,7 +55,7 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_get_wallet_info(self, client: SolanaWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `address` but received ''"):
@@ -63,7 +63,7 @@ class TestAPI:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send_transaction(self, client: SolanaWalletRouterAPI) -> None:
         api = client.api.send_transaction(
@@ -71,7 +71,7 @@ class TestAPI:
         )
         assert_matches_type(APISendTransactionResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_send_transaction_with_all_params(self, client: SolanaWalletRouterAPI) -> None:
         api = client.api.send_transaction(
@@ -80,7 +80,7 @@ class TestAPI:
         )
         assert_matches_type(APISendTransactionResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_send_transaction(self, client: SolanaWalletRouterAPI) -> None:
         response = client.api.with_raw_response.send_transaction(
@@ -92,7 +92,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APISendTransactionResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_send_transaction(self, client: SolanaWalletRouterAPI) -> None:
         with client.api.with_streaming_response.send_transaction(
@@ -106,7 +106,7 @@ class TestAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_upload_token_metadata(self, client: SolanaWalletRouterAPI) -> None:
         api = client.api.upload_token_metadata(
@@ -118,7 +118,7 @@ class TestAPI:
         )
         assert_matches_type(APIUploadTokenMetadataResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_upload_token_metadata(self, client: SolanaWalletRouterAPI) -> None:
         response = client.api.with_raw_response.upload_token_metadata(
@@ -134,7 +134,7 @@ class TestAPI:
         api = response.parse()
         assert_matches_type(APIUploadTokenMetadataResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_upload_token_metadata(self, client: SolanaWalletRouterAPI) -> None:
         with client.api.with_streaming_response.upload_token_metadata(
@@ -158,7 +158,7 @@ class TestAsyncAPI:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_get_wallet_info(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         api = await async_client.api.get_wallet_info(
@@ -166,7 +166,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIGetWalletInfoResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_get_wallet_info(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.api.with_raw_response.get_wallet_info(
@@ -178,7 +178,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIGetWalletInfoResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_get_wallet_info(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.api.with_streaming_response.get_wallet_info(
@@ -192,7 +192,7 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_get_wallet_info(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `address` but received ''"):
@@ -200,7 +200,7 @@ class TestAsyncAPI:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send_transaction(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         api = await async_client.api.send_transaction(
@@ -208,7 +208,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APISendTransactionResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_send_transaction_with_all_params(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         api = await async_client.api.send_transaction(
@@ -217,7 +217,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APISendTransactionResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_send_transaction(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.api.with_raw_response.send_transaction(
@@ -229,7 +229,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APISendTransactionResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_send_transaction(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.api.with_streaming_response.send_transaction(
@@ -243,7 +243,7 @@ class TestAsyncAPI:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_upload_token_metadata(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         api = await async_client.api.upload_token_metadata(
@@ -255,7 +255,7 @@ class TestAsyncAPI:
         )
         assert_matches_type(APIUploadTokenMetadataResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_upload_token_metadata(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         response = await async_client.api.with_raw_response.upload_token_metadata(
@@ -271,7 +271,7 @@ class TestAsyncAPI:
         api = await response.parse()
         assert_matches_type(APIUploadTokenMetadataResponse, api, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_upload_token_metadata(self, async_client: AsyncSolanaWalletRouterAPI) -> None:
         async with async_client.api.with_streaming_response.upload_token_metadata(
